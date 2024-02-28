@@ -83,7 +83,7 @@ const SearchBarInput = ({ onChange, onSubmit, isHomepage, onFocus, onBlur, onHid
       transitionDuration="normal"
       transitionTimingFunction="ease"
     >
-      <InputGroup size={{ base: isHomepage ? 'md' : 'sm', lg: 'md' }}>
+      <InputGroup size={{ base: isHomepage ? 'md' : 'sm', lg: 'md' }} mb={ 6 }>
         <InputLeftElement w={{ base: isHomepage ? 6 : 4, lg: 6 }} ml={{ base: isHomepage ? 4 : 3, lg: 4 }} h="100%">
           <IconSvg name="search" boxSize={{ base: isHomepage ? 6 : 4, lg: 6 }} color={ useColorModeValue('blackAlpha.600', 'blackAlpha.600') }/>
         </InputLeftElement>

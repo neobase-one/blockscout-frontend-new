@@ -2,6 +2,7 @@ import { Box, Heading, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 import config from 'configs/app';
+import BlankRasaBanner from 'ui/banner/BlankRasaBanner';
 import ChainIndicators from 'ui/home/indicators/ChainIndicators';
 import LatestBlocks from 'ui/home/LatestBlocks';
 import LatestZkEvmL2Batches from 'ui/home/LatestZkEvmL2Batches';
@@ -43,7 +44,10 @@ const Home = () => {
         <SearchBar isHomepage/>
       </Box>
       <Stats/>
-      <ChainIndicators/>
+      <Flex flexDirection={ [ 'column', 'row' ] } alignItems={ [ 'start' ] } gap={ 5 } mt={ 8 }>
+        <ChainIndicators/>
+        <BlankRasaBanner block={ false }/>
+      </Flex>
       <AdBanner mt={{ base: 6, lg: 8 }} mx="auto" display="flex" justifyContent="center"/>
       <Flex mt={ 8 } direction={{ base: 'column', lg: 'row' }} columnGap={ 12 } rowGap={ 8 }>
         { rollupFeature.isEnabled && rollupFeature.type === 'zkEvm' ? <LatestZkEvmL2Batches/> : <LatestBlocks/> }
