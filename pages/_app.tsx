@@ -56,18 +56,18 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           rel="icon"
           sizes="32x32"
           type="image/png"
-          href={ `/static/favicon/favicon-32x32-${ colorMode }.png` }
+          href={ `/favicon/favicon-32x32-${ colorMode }.png` }
         />
         <link
           rel="icon"
           sizes="16x16"
           type="image/png"
-          href={ `/static/favicon/favicon-16x16-${ colorMode }.png` }
+          href={ `/favicon/favicon-16x16-${ colorMode }.png` }
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={ `/static/favicon/apple-touch-icon-${ colorMode }.png` }
+          href={ `/favicon/apple-touch-icon-${ colorMode }.png` }
         />
       </Head>
 
