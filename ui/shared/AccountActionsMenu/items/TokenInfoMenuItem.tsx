@@ -89,7 +89,12 @@ const TokenInfoMenuItem = ({ className, hash, onBeforeClick, type }: Props) => {
       }
       case 'menu_item': {
         return (
-          <MenuItem className={ className } onClick={ onClick }>
+          <MenuItem className={ className } onClick={ onClick }
+            bgColor="bg_base"
+            borderColor="divider"
+            _hover={{
+              bgColor: 'divider',
+            }}>
             { icon }
             <chakra.span ml={ 2 }>{ label }</chakra.span>
           </MenuItem>

@@ -86,7 +86,7 @@ const ColorModeSwitch = () => {
           />
         ) : <Skeleton boxSize={ 5 } borderRadius="sm"/> }
       </PopoverTrigger>
-      <PopoverContent overflowY="hidden" w="164px" fontSize="sm">
+      <PopoverContent overflowY="hidden" w="164px" fontSize="sm" borderColor="divider" bgColor="bg_base">
         <PopoverBody boxShadow="2xl" p={ 3 }>
           { COLOR_THEMES.map((theme) => <ColorModeSwitchTheme key={ theme.name } { ...theme } onClick={ handleSelect } activeHex={ activeHex }/>) }
         </PopoverBody>

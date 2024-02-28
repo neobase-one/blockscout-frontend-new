@@ -29,6 +29,13 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
           size="sm"
           onClick={ resetPage }
           isDisabled={ page === 1 || isLoading }
+          borderColor="accent"
+          color="accent"
+          _hover={{ color: 'accent', borderColor: 'accent' }}
+          _active={{
+            borderColor: 'accent',
+            color: 'accent',
+          }}
         >
         First
         </Button>
@@ -42,6 +49,13 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
           w="36px"
           icon={ <IconSvg name="arrows/east-mini" w={ 5 } h={ 5 }/> }
           isDisabled={ !canGoBackwards || isLoading }
+          borderColor="accent"
+          color="accent"
+          _hover={{ color: 'accent', borderColor: 'accent' }}
+          _active={{
+            borderColor: 'accent',
+            color: 'accent',
+          }}
         />
       </Skeleton>
       <Skeleton isLoaded={ !showSkeleton } display="inline-block" borderRadius="base">
@@ -54,6 +68,13 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
           h={ 8 }
           minW="36px"
           cursor="unset"
+          color="accent"
+          borderColor="accent"
+          _hover={{ color: 'accent', borderColor: 'accent' }}
+          _active={{
+            borderColor: 'accent',
+            color: 'accent',
+          }}
         >
           { page }
         </Button>
@@ -67,6 +88,13 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
           w="36px"
           icon={ <IconSvg name="arrows/east-mini" w={ 5 } h={ 5 } transform="rotate(180deg)"/> }
           isDisabled={ !hasNextPage || isLoading }
+          borderColor="accent"
+          color="accent"
+          _hover={{ color: 'accent', borderColor: 'accent' }}
+          _active={{
+            borderColor: 'accent',
+            color: 'accent',
+          }}
         />
       </Skeleton>
       { /* not implemented yet */ }

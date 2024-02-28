@@ -8,7 +8,7 @@ test('base view +@dark-mode', async({ mount, page }) => {
   const component = await mount(
     <TestApp>
       <Box m={ 10 }>
-        <Tooltip label="Tooltip content">
+        <Tooltip label="Tooltip content" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
           trigger
         </Tooltip>
       </Box>
@@ -26,7 +26,7 @@ test.skip('with icon', async({ mount, page }) => {
   const component = await mount(
     <TestApp>
       <Box m={ 10 }>
-        <Tooltip label="Tooltip content">
+        <Tooltip label="Tooltip content" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
           <Icon viewBox="0 0 20 20" boxSize={ 5 } aria-label="Trigger">
             <circle cx="10" cy="10" r="10"/>
           </Icon>

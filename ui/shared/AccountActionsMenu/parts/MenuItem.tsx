@@ -1,4 +1,4 @@
-import { MenuItem as MenuItemChakra } from '@chakra-ui/react';
+import { MenuItem as MenuItemChakra, chakra } from '@chakra-ui/react';
 import React from 'react';
 
 interface Props {
@@ -15,4 +15,4 @@ const MenuItem = ({ className, children, onClick }: Props) => {
   );
 };
 
-export default MenuItem;
+export default chakra(MenuItem);

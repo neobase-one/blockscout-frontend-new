@@ -76,7 +76,7 @@ const NetworkExplorers = ({ className, type, pathParam }: Props) => {
           </Hide>
         </Button>
       </PopoverTrigger>
-      <PopoverContent w="auto">
+      <PopoverContent w="auto" borderColor="divider" bgColor="bg_base">
         <PopoverBody >
           <chakra.span color="text_secondary" fontSize="xs">Verify with other explorers</chakra.span>
           <Grid

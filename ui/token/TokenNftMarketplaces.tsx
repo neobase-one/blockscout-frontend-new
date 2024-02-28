@@ -29,7 +29,7 @@ const TokenNftMarketplaces = ({ hash, id, isLoading }: Props) => {
           const href = hrefTemplate.replace('{id}', id || '').replace('{hash}', hash || '');
 
           return (
-            <Tooltip label={ `View on ${ item.name }` } key={ item.name }>
+            <Tooltip label={ `View on ${ item.name }` } key={ item.name } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
               <Link href={ href } target="_blank">
                 <Image
                   src={ item.logo_url }

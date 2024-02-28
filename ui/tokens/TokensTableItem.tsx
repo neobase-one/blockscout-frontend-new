@@ -68,6 +68,7 @@ const TokensTableItem = ({
             fontWeight={ 600 }
             mr={ 3 }
             minW="28px"
+            color="text"
           >
             { (page - 1) * PAGE_SIZE + index + 1 }
           </Skeleton>
@@ -96,8 +97,8 @@ const TokensTableItem = ({
               />
             </Flex>
             <Flex columnGap={ 1 }>
-              <Tag isLoading={ isLoading }>{ type }</Tag>
-              { bridgedChainTag && <Tag isLoading={ isLoading }>{ bridgedChainTag }</Tag> }
+              <Tag isLoading={ isLoading } color="text_secondary" bgColor="divider">{ type }</Tag>
+              { bridgedChainTag && <Tag isLoading={ isLoading } color="text_secondary" bgColor="divider">{ bridgedChainTag }</Tag> }
             </Flex>
           </Flex>
         </Flex>
@@ -119,6 +120,7 @@ const TokensTableItem = ({
           lineHeight="24px"
           fontWeight={ 500 }
           display="inline-block"
+          color="text"
         >
           { Number(holders).toLocaleString() }
         </Skeleton>

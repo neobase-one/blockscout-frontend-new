@@ -78,7 +78,7 @@ const AccountActionsMenu = ({ isLoading, className }: Props) => {
         onClick={ handleButtonClick }
         icon={ <IconSvg name="dots" boxSize="18px"/> }
       />
-      <MenuList minWidth="180px" zIndex="popover">
+      <MenuList minWidth="180px" zIndex="popover" bgColor="bg_base" borderColor="divider">
         { items.map(({ render }, index) => (
           <React.Fragment key={ index }>
             { render({ type: 'menu_item', hash, onBeforeClick: isAccountActionAllowed }) }

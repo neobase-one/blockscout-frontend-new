@@ -102,7 +102,7 @@ const Symbol = (props: SymbolProps) => {
       alignItems="center"
       maxW="20%"
       ml={ 2 }
-      color="text_secondary"
+      color="text"
     >
       <div>(</div>
       <TruncatedTextTooltip label={ symbol }>

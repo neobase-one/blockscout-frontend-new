@@ -14,7 +14,7 @@ type Props = {
 }
 
 const StatsWidget = ({ label, value, isLoading, hint, diff, diffPeriod = '24h', diffFormatted }: Props) => {
-  const bgColor = useColorModeValue('blue.50', 'blue.800');
+  const bgColor = useColorModeValue('#E9FFF4', '#2C2C2C');
   const skeletonBgColor = useColorModeValue('blackAlpha.50', 'whiteAlpha.50');
   const hintColor = useColorModeValue('gray.600', 'gray.400');
 
@@ -47,7 +47,7 @@ const StatsWidget = ({ label, value, isLoading, hint, diff, diffPeriod = '24h', 
           <Text fontWeight={ 500 } fontSize="lg" lineHeight={ 6 }>{ value }</Text>
           { diff && Number(diff) > 0 && (
             <>
-              <Text fontWeight={ 500 } ml={ 2 } mr={ 1 } fontSize="lg" lineHeight={ 6 } color="green.500">
+              <Text fontWeight={ 500 } ml={ 2 } mr={ 1 } fontSize="lg" lineHeight={ 6 } color="accent">
                 +{ diffFormatted || Number(diff).toLocaleString() }
               </Text>
               <Text variant="secondary" fontSize="sm">({ diffPeriod })</Text>

@@ -13,7 +13,7 @@ interface Props {
 
 const ButtonItem = ({ className, label, onClick, icon }: Props) => {
   return (
-    <Tooltip label={ label }>
+    <Tooltip label={ label } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <IconButton
         aria-label={ label }
         className={ className }

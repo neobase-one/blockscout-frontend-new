@@ -89,7 +89,7 @@ const WalletMenuDesktop = ({ isHomePage }: Props) => {
         </Box>
       </WalletTooltip>
       { isWalletConnected && (
-        <PopoverContent w="235px">
+        <PopoverContent w="235px" borderColor="divider" bgColor="bg_base">
           <PopoverBody padding="24px 16px 16px 16px">
             <WalletMenuContent address={ address } disconnect={ disconnect }/>
           </PopoverBody>

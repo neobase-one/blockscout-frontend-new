@@ -7,7 +7,6 @@ import {
   PopoverContent,
   PopoverArrow,
   PopoverBody,
-  useColorModeValue,
   DarkMode,
   ListItem,
   OrderedList,
@@ -32,7 +31,6 @@ interface Props {
 }
 
 const ContractVerificationFieldMethod = ({ control, isDisabled, methods }: Props) => {
-  const tooltipBg = useColorModeValue('gray.700', 'gray.900');
   const isMobile = useIsMobile();
 
   const options = React.useMemo(() => methods.map((method) => ({
@@ -108,8 +106,8 @@ const ContractVerificationFieldMethod = ({ control, isDisabled, methods }: Props
             </chakra.span>
           </PopoverTrigger>
           <Portal>
-            <PopoverContent bgColor={ tooltipBg } w={{ base: '300px', lg: '380px' }}>
-              <PopoverArrow bgColor={ tooltipBg }/>
+            <PopoverContent bgColor="bg_base" w={{ base: '300px', lg: '380px' }} borderColor="divider" >
+              <PopoverArrow bgColor="bg_base"/>
               <PopoverBody color="white">
                 <DarkMode>
                   <span>Currently, Blockscout supports { methods.length } methods:</span>

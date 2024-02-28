@@ -79,7 +79,7 @@ const NameDomainDetails = ({ query }: Props) => {
             address={ query.data.registrant }
             isLoading={ isLoading }
           />
-          <Tooltip label="Lookup for related domain names">
+          <Tooltip label="Lookup for related domain names" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
             <LinkInternal
               flexShrink={ 0 }
               display="inline-flex"
@@ -102,7 +102,7 @@ const NameDomainDetails = ({ query }: Props) => {
             address={ query.data.owner }
             isLoading={ isLoading }
           />
-          <Tooltip label="Lookup for related domain names">
+          <Tooltip label="Lookup for related domain names" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
             <LinkInternal
               flexShrink={ 0 }
               display="inline-flex"
@@ -125,7 +125,7 @@ const NameDomainDetails = ({ query }: Props) => {
             address={ query.data.wrapped_owner }
             isLoading={ isLoading }
           />
-          <Tooltip label="Lookup for related domain names">
+          <Tooltip label="Lookup for related domain names" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
             <LinkInternal
               flexShrink={ 0 }
               display="inline-flex"

@@ -1,4 +1,4 @@
-import { Box, useColorMode } from '@chakra-ui/react';
+import { Box, useColorMode, useToken, useColorModeValue } from '@chakra-ui/react';
 import { createGraphiQLFetcher } from '@graphiql/toolkit';
 import { GraphiQL } from 'graphiql';
 import React from 'react';
@@ -10,13 +10,36 @@ import isBrowser from 'lib/isBrowser';
 
 const feature = config.features.graphqlApiDocs;
 
-const graphQLStyle = {
-  '.graphiql-container': {
-    backgroundColor: 'unset',
-  },
-};
-
 const GraphQL = () => {
+  const graphQLStyle = {
+    '.graphiql-container': {
+      backgroundColor: 'unset',
+    },
+
+    // Our custom style
+    '.graphiql-editor .cm-s-graphiql, .graphiql-query-editor,.graphiql-editor .CodeMirror-gutters,.graphiql-editor-tools,.graphiql-container .graphiql-editors':
+      {
+        backgroundColor:
+          useToken('colors', useColorModeValue('white', 'black')) +
+          ' !important',
+      },
+
+    '.graphiql-query-editor': {
+      borderRadius: '12px 12px 0 0 !important',
+    },
+
+    '.graphiql-editor-tools': {
+      borderRadius: '0 0 12px 12px !important',
+    },
+
+    '.graphiql-editor-tools button': {
+      color: 'rgba(59, 75, 104, 0.76) !important',
+    },
+
+    '.graphiql-execute-button': {
+      backgroundColor: '#D60590 !important',
+    },
+  };
 
   const { colorMode } = useColorMode();
 
@@ -63,7 +86,11 @@ const GraphQL = () => {
   return (
     <Box h="100vh" overflowX="scroll" sx={ graphQLStyle }>
       <Box h="100vh" minW="900px" sx={ graphQLStyle }>
-        <GraphiQL fetcher={ fetcher } defaultQuery={ initialQuery } key={ colorModeState }/>
+        <GraphiQL
+          fetcher={ fetcher }
+          defaultQuery={ initialQuery }
+          key={ colorModeState }
+        />
       </Box>
     </Box>
   );

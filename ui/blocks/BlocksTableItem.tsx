@@ -32,7 +32,6 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
   const burntFees = BigNumber(data.burnt_fees || 0);
   const txFees = BigNumber(data.tx_fees || 0);
 
-  const separatorColor = useColorModeValue('gray.200', 'gray.700');
   const burntFeesIconColor = useColorModeValue('gray.500', 'inherit');
 
   return (
@@ -46,7 +45,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
     >
       <Td fontSize="sm">
         <Flex columnGap={ 2 } alignItems="center" mb={ 2 }>
-          <Tooltip isDisabled={ data.type !== 'reorg' } label="Chain reorganizations">
+          <Tooltip isDisabled={ data.type !== 'reorg' } label="Chain reorganizations" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
             <BlockEntity
               isLoading={ isLoading }
               number={ data.height }
@@ -90,7 +89,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
         <Td fontSize="sm">
           <Skeleton isLoaded={ !isLoading } display="inline-block">{ BigNumber(data.gas_used || 0).toFormat() }</Skeleton>
           <Flex mt={ 2 }>
-            <Tooltip label={ isLoading ? undefined : 'Gas Used %' }>
+            <Tooltip label={ isLoading ? undefined : 'Gas Used %' } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
               <Box>
                 <Utilization
                   colorScheme="gray"
@@ -101,7 +100,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
             </Tooltip>
             { data.gas_target_percentage && (
               <>
-                <TextSeparator color={ separatorColor } mx={ 1 }/>
+                <TextSeparator color="text_secondary" mx={ 1 }/>
                 <GasUsedToTargetRatio value={ data.gas_target_percentage } isLoading={ isLoading }/>
               </>
             ) }
@@ -121,9 +120,9 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
               { burntFees.dividedBy(WEI).toFixed(8) }
             </Skeleton>
           </Flex>
-          <Tooltip label={ isLoading ? undefined : 'Burnt fees / Txn fees * 100%' }>
+          <Tooltip label={ isLoading ? undefined : 'Burnt fees / Txn fees * 100%' } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
             <Box w="min-content">
-              <Utilization mt={ 2 } value={ burntFees.div(txFees).toNumber() } isLoading={ isLoading }/>
+              <Utilization mt={ 2 } value={ burntFees.div(txFees).toNumber() } isLoading={ isLoading } colorScheme="accent"/>
             </Box>
           </Tooltip>
         </Td>

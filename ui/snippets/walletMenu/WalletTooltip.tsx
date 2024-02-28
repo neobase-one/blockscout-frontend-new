@@ -64,6 +64,10 @@ const WalletTooltip = ({ children, isDisabled, isMobile }: Props) => {
       onClose={ setIsTooltipShown.off }
       display={ isMobile ? { base: 'flex', lg: 'none' } : { base: 'none', lg: 'flex' } }
       ref={ ref }
+      bgColor="bg_base"
+      color="text"
+      borderWidth="1px"
+      borderColor="divider"
     >
       { children }
     </Tooltip>

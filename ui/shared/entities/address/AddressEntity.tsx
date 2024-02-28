@@ -58,7 +58,7 @@ const Icon = (props: IconProps) => {
 
     if (props.address.is_verified) {
       return (
-        <Tooltip label="Verified contract">
+        <Tooltip label="Verified contract" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
           <span>
             <EntityBase.Icon
               { ...props }
@@ -72,7 +72,7 @@ const Icon = (props: IconProps) => {
     }
 
     return (
-      <Tooltip label="Contract">
+      <Tooltip label="Contract" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <span>
           <EntityBase.Icon
             { ...props }
@@ -85,7 +85,7 @@ const Icon = (props: IconProps) => {
   }
 
   return (
-    <Tooltip label={ props.address.implementation_name }>
+    <Tooltip label={ props.address.implementation_name } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <Flex marginRight={ styles.marginRight }>
         <AddressIdenticon
           size={ props.iconSize === 'lg' ? 30 : 20 }
@@ -109,7 +109,7 @@ const Content = chakra((props: ContentProps) => {
     );
 
     return (
-      <Tooltip label={ label } maxW="100vw">
+      <Tooltip label={ label } maxW="100vw" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <Skeleton isLoaded={ !props.isLoading } overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" as="span">
           { text }
         </Skeleton>

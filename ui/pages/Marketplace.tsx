@@ -120,9 +120,12 @@ const Marketplace = () => {
               ml="auto"
               icon={ <IconSvg name="dots" boxSize="18px"/> }
             />
-            <MenuList minW="max-content">
+            <MenuList minW="max-content" bgColor="bg_base" borderColor="divider">
               { links.map(({ label, href, icon }) => (
-                <MenuItem key={ label } as="a" href={ href } target="_blank" py={ 2 } px={ 4 }>
+                <MenuItem key={ label } as="a" href={ href } target="_blank" py={ 2 } px={ 4 } bgColor="bg_base" borderColor="divider"
+                  _hover={{
+                    bgColor: 'divider',
+                  }}>
                   <IconSvg name={ icon } boxSize={ 4 } mr={ 2.5 }/>
                   { label }
                   <IconSvg name="arrows/north-east" boxSize={ 4 } color="gray.400" ml={ 2 }/>

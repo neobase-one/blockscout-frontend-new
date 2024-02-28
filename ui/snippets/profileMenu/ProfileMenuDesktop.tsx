@@ -77,6 +77,10 @@ const ProfileMenuDesktop = ({ isHomePage }: Props) => {
         padding={ 2 }
         isDisabled={ hasMenu }
         openDelay={ 500 }
+        bgColor="bg_base"
+        color="text"
+        borderWidth="1px"
+        borderColor="divider"
       >
         <Box>
           <PopoverTrigger>
@@ -94,7 +98,7 @@ const ProfileMenuDesktop = ({ isHomePage }: Props) => {
         </Box>
       </Tooltip>
       { hasMenu && (
-        <PopoverContent w="212px">
+        <PopoverContent w="212px" borderColor="divider" bgColor="bg_base">
           <PopoverBody padding="24px 16px 16px 16px">
             <ProfileMenuContent data={ data }/>
           </PopoverBody>

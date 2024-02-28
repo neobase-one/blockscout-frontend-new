@@ -62,7 +62,7 @@ const VerifiedAddressesListItem = ({ item, application, onAdd, onEdit, isLoading
           noCopy
           noSymbol
         />
-        <Tooltip label="Edit">
+        <Tooltip label="Edit" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
           <IconButton
             aria-label="edit"
             variant="simple"

@@ -90,7 +90,7 @@ const AddressAddToWallet = ({ className, token, isLoading, variant = 'icon', ico
 
   if (variant === 'button') {
     return (
-      <Tooltip label={ `Add token to ${ WALLETS_INFO[wallet].name }` }>
+      <Tooltip label={ `Add token to ${ WALLETS_INFO[wallet].name }` } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <IconButton
           className={ className }
           aria-label="Add token to wallet"
@@ -106,7 +106,7 @@ const AddressAddToWallet = ({ className, token, isLoading, variant = 'icon', ico
   }
 
   return (
-    <Tooltip label={ `Add token to ${ WALLETS_INFO[wallet].name }` }>
+    <Tooltip label={ `Add token to ${ WALLETS_INFO[wallet].name }` } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <Box className={ className } display="inline-flex" cursor="pointer" onClick={ handleClick } flexShrink={ 0 } aria-label="Add token to wallet">
         <IconSvg name={ WALLETS_INFO[wallet].icon } boxSize={ iconSize }/>
       </Box>

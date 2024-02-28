@@ -92,14 +92,14 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
   ].map((tag) => <Tag key={ tag.label }>{ tag.display_name }</Tag>);
 
   const executionSuccessBadge = toAddress?.is_contract && data.result === 'success' ? (
-    <Tooltip label="Contract execution completed">
+    <Tooltip label="Contract execution completed" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <chakra.span display="inline-flex" ml={ 2 } mr={ 1 }>
         <IconSvg name="status/success" boxSize={ 4 } color={ executionSuccessIconColor } cursor="pointer"/>
       </chakra.span>
     </Tooltip>
   ) : null;
   const executionFailedBadge = toAddress?.is_contract && Boolean(data.status) && data.result !== 'success' ? (
-    <Tooltip label="Error occurred during contract execution">
+    <Tooltip label="Error occurred during contract execution" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <chakra.span display="inline-flex" ml={ 2 } mr={ 1 }>
         <IconSvg name="status/error" boxSize={ 4 } color="error" cursor="pointer"/>
       </chakra.span>
@@ -190,7 +190,7 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
           ) }
         { Boolean(data.confirmations) && (
           <>
-            <TextSeparator color="gray.500"/>
+            <TextSeparator color="text_secondary"/>
             <Skeleton isLoaded={ !isLoading } color="text_secondary">
               <span>{ data.confirmations } Block confirmations</span>
             </Skeleton>
@@ -218,7 +218,7 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
           <DetailsTimestamp timestamp={ data.timestamp } isLoading={ isLoading }/>
           { data.confirmation_duration && (
             <>
-              <TextSeparator color="gray.500"/>
+              <TextSeparator color="text_secondary"/>
               <Skeleton isLoaded={ !isLoading } color="text_secondary">
                 <span>{ getConfirmationDuration(data.confirmation_duration) }</span>
               </Skeleton>

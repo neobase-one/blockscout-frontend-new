@@ -141,7 +141,7 @@ const TxInterpretation = ({ summary, isLoading, className }: Props) => {
 
   return (
     <Skeleton isLoaded={ !isLoading } className={ className } fontWeight={ 500 } whiteSpace="pre-wrap" >
-      <Tooltip label="Transaction summary">
+      <Tooltip label="Transaction summary" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <IconSvg name="lightning" boxSize={ 5 } color="text_secondary" mr={ 2 } verticalAlign="text-top"/>
       </Tooltip>
       { chunks.map((chunk, index) => {

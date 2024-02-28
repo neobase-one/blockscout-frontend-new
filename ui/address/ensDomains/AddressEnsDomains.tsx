@@ -110,7 +110,7 @@ const AddressEnsDomains = ({ addressHash, mainDomainName }: Props) => {
           </Hide>
         </Button>
       </PopoverTrigger>
-      <PopoverContent w={{ base: '100vw', lg: '500px' }}>
+      <PopoverContent w={{ base: '100vw', lg: '500px' }} borderColor="divider" bgColor="bg_base">
         <PopoverBody px={ 6 } py={ 5 } fontSize="sm" display="flex" flexDir="column" rowGap={ 5 } alignItems="flex-start">
           { mainDomain && (
             <div>

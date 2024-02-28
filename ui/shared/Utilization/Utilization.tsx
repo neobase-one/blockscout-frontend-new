@@ -5,7 +5,7 @@ import React from 'react';
 interface Props {
   className?: string;
   value: number;
-  colorScheme?: 'green' | 'gray';
+  colorScheme?: 'green' | 'gray' | 'accent';
   isLoading?: boolean;
 }
 
@@ -13,8 +13,19 @@ const WIDTH = 50;
 
 const Utilization = ({ className, value, colorScheme = 'green', isLoading }: Props) => {
   const valueString = (clamp(value * 100 || 0, 0, 100)).toLocaleString(undefined, { maximumFractionDigits: 2 }) + '%';
-  const colorGrayScheme = useColorModeValue('gray.500', 'gray.400');
-  const color = colorScheme === 'gray' ? colorGrayScheme : 'green.500';
+  let color;
+
+  switch (colorScheme) {
+    case 'accent':
+      color = 'accent';
+      break;
+    case 'gray':
+      color = 'text_secondary';
+      break;
+    case 'green':
+      color = 'green.500';
+      break;
+  }
 
   return (
     <Flex className={ className } alignItems="center" columnGap={ 2 }>

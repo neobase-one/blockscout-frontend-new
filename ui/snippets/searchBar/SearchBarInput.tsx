@@ -58,7 +58,6 @@ const SearchBarInput = ({ onChange, onSubmit, isHomepage, onFocus, onBlur, onHid
     };
   }, [ isMobile, handleScroll ]);
 
-  const bgColor = useColorModeValue('white', 'black');
   const transformMobile = scrollDirection !== 'down' ? 'translateY(0)' : 'translateY(-100%)';
 
   return (
@@ -69,7 +68,7 @@ const SearchBarInput = ({ onChange, onSubmit, isHomepage, onFocus, onBlur, onHid
       onBlur={ onBlur }
       onFocus={ onFocus }
       w="100%"
-      backgroundColor={ bgColor }
+      backgroundColor="white"
       borderRadius={{ base: isHomepage ? 'base' : 'none', lg: 'base' }}
       position={{ base: isHomepage ? 'static' : 'absolute', lg: 'static' }}
       top={{ base: isHomepage ? 0 : 55, lg: 0 }}
@@ -86,7 +85,7 @@ const SearchBarInput = ({ onChange, onSubmit, isHomepage, onFocus, onBlur, onHid
     >
       <InputGroup size={{ base: isHomepage ? 'md' : 'sm', lg: 'md' }}>
         <InputLeftElement w={{ base: isHomepage ? 6 : 4, lg: 6 }} ml={{ base: isHomepage ? 4 : 3, lg: 4 }} h="100%">
-          <IconSvg name="search" boxSize={{ base: isHomepage ? 6 : 4, lg: 6 }} color={ useColorModeValue('blackAlpha.600', 'whiteAlpha.600') }/>
+          <IconSvg name="search" boxSize={{ base: isHomepage ? 6 : 4, lg: 6 }} color={ useColorModeValue('blackAlpha.600', 'blackAlpha.600') }/>
         </InputLeftElement>
         <Input
           pl={{ base: isHomepage ? '50px' : '38px', lg: '50px' }}
@@ -103,9 +102,10 @@ const SearchBarInput = ({ onChange, onSubmit, isHomepage, onFocus, onBlur, onHid
           onChange={ handleChange }
           border={ isHomepage ? 'none' : '2px solid' }
           borderColor={ useColorModeValue('blackAlpha.100', 'whiteAlpha.200') }
-          _focusWithin={{ _placeholder: { color: 'gray.300' } }}
-          color={ useColorModeValue('black', 'white') }
           value={ value }
+          _focusWithin={{ borderColor: 'accent', _placeholder: { color: useColorModeValue('rgba(16, 17, 18, 0.48)', 'text') } }}
+          color={ useColorModeValue('black', 'black') }
+          _placeholder={{ color: useColorModeValue('rgba(16, 17, 18, 0.48)', 'gray.500') }}
         />
         { value && (
           <InputRightElement top={{ base: isHomepage ? '18px' : 2, lg: '18px' }} right={ 2 }>

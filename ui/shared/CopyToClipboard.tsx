@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, useClipboard, chakra, useDisclosure, Skeleton, useColorModeValue } from '@chakra-ui/react';
+import { IconButton, Tooltip, useClipboard, chakra, useDisclosure, Skeleton } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 import IconSvg from 'ui/shared/IconSvg';
@@ -14,7 +14,6 @@ const CopyToClipboard = ({ text, className, isLoading }: Props) => {
   const [ copied, setCopied ] = useState(false);
   // have to implement controlled tooltip because of the issue - https://github.com/chakra-ui/chakra-ui/issues/7107
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const iconColor = useColorModeValue('gray.400', 'gray.500');
 
   useEffect(() => {
     if (hasCopied) {
@@ -29,13 +28,14 @@ const CopyToClipboard = ({ text, className, isLoading }: Props) => {
   }
 
   return (
-    <Tooltip label={ copied ? 'Copied' : 'Copy to clipboard' } isOpen={ isOpen || copied }>
+    <Tooltip label={ copied ? 'Copied' : 'Copy to clipboard' } isOpen={ isOpen || copied }
+      bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <IconButton
         aria-label="copy"
         icon={ <IconSvg name="copy" boxSize={ 5 }/> }
         w="20px"
         h="20px"
-        color={ iconColor }
+        color="text_secondary"
         variant="simple"
         display="inline-block"
         flexShrink={ 0 }
@@ -45,6 +45,7 @@ const CopyToClipboard = ({ text, className, isLoading }: Props) => {
         onMouseLeave={ onClose }
         ml={ 2 }
         borderRadius={ 0 }
+        _hover={{ color: 'accent' }}
       />
     </Tooltip>
   );

@@ -131,7 +131,7 @@ const SolidityscanReport = ({ className, hash }: Props) => {
           </Button>
         </Skeleton>
       </PopoverTrigger>
-      <PopoverContent w={{ base: '100vw', lg: '328px' }}>
+      <PopoverContent w={{ base: '100vw', lg: '328px' }} borderColor="divider" bgColor="bg_base">
         <PopoverBody px="26px" py="20px" fontSize="sm">
           <Box mb={ 5 }>Contract analyzed for 140+ vulnerability patterns by SolidityScan</Box>
           <Flex alignItems="center" mb={ 5 }>

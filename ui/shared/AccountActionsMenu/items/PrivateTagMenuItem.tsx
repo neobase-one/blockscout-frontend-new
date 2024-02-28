@@ -70,7 +70,10 @@ const PrivateTagMenuItem = ({ className, hash, onBeforeClick, entityType = 'addr
       }
       case 'menu_item': {
         return (
-          <MenuItem className={ className } onClick={ handleClick }>
+          <MenuItem className={ className } onClick={ handleClick } bgColor="bg_base" borderColor="divider"
+            _hover={{
+              bgColor: 'divider',
+            }}>
             <IconSvg name="privattags" boxSize={ 6 } mr={ 2 }/>
             <span>Add private tag</span>
           </MenuItem>

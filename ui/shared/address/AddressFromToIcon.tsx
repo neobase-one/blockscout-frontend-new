@@ -53,7 +53,7 @@ const AddressFromToIcon = ({ isLoading, type, className }: Props) => {
   }
 
   return (
-    <Tooltip label={ labels[type] }>
+    <Tooltip label={ labels[type] } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       { icon }
     </Tooltip>
   );
