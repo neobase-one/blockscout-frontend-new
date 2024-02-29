@@ -32,15 +32,23 @@ const WalletMenuDesktop = ({ isHomePage }: Props) => {
   let buttonStyles: Partial<ButtonProps> = {};
   if (isWalletConnected) {
     buttonStyles = {
-      bg: isHomePage ? 'blue.50' : themedBackground,
-      color: isHomePage ? 'blackAlpha.800' : themedColor,
+      bg: isHomePage ? 'accent' : themedBackground,
+      color: isHomePage ? 'text_on_accent' : themedColor,
+      borderColor: isHomePage ? 'accent' : themedColor,
       _hover: {
-        color: isHomePage ? 'blackAlpha.800' : themedColor,
+        color: isHomePage ? 'text_on_accent' : themedColor,
       },
     };
   } else if (isHomePage) {
     buttonStyles = {
-      color: 'white',
+      bg: 'accent',
+      color: 'text_on_accent',
+      _hover: {
+        color: 'text_on_accent',
+      },
+      _focus: {
+        bg: 'accent',
+      },
     };
   } else {
     buttonStyles = {

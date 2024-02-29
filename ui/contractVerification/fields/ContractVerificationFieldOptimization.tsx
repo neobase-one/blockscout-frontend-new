@@ -44,6 +44,7 @@ const ContractVerificationFieldOptimization = () => {
         maxW="200px"
         flexShrink={ 1 }
         isInvalid={ Boolean(error) }
+        _focus={{ borderColor: 'accent' }}
       />
     );
   }, [ error, formState.isSubmitting ]);

@@ -60,6 +60,7 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
           whiteSpace="nowrap"
           _placeholder={{ color: 'text_secondary' }}
           { ...inputProps }
+          _focus={{ borderColor: 'accent' }}
         />
 
         { filterQuery ? (

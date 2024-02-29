@@ -84,6 +84,8 @@ const AppError = ({ error, className }: Props) => {
               variant="outline"
               as="a"
               href={ route({ pathname: '/' }) }
+              color="accent"
+              borderColor="accent"
             >
                 Back to home
             </Button>

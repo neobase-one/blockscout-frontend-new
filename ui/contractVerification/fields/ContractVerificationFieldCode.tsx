@@ -27,6 +27,7 @@ const ContractVerificationFieldCode = ({ isVyper }: Props) => {
           isInvalid={ Boolean(error) }
           isDisabled={ formState.isSubmitting }
           required
+          _focus={{ borderColor: 'accent' }}
         />
         <InputPlaceholder text="Contract code"/>
         { error?.message && <FieldError message={ error?.message }/> }

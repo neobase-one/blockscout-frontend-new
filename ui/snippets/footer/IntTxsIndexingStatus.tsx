@@ -89,7 +89,7 @@ const IntTxsIndexingStatus = () => {
         { trigger }
       </PopoverTrigger>
       <PopoverContent maxH="450px" overflowY="hidden" w="240px" borderColor="divider" bgColor="bg_base">
-        <PopoverBody p={ 4 } bgColor={ bgColor } boxShadow="2xl">
+        <PopoverBody p={ 4 } boxShadow="2xl">
           { hint }
         </PopoverBody>
       </PopoverContent>

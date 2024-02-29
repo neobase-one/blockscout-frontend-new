@@ -29,6 +29,7 @@ const ContractVerificationFieldName = ({ hint, isReadOnly }: Props) => {
           maxLength={ 255 }
           isDisabled={ formState.isSubmitting || isReadOnly }
           autoComplete="off"
+          _focus={{ borderColor: 'accent' }}
         />
         <InputPlaceholder text="Contract name" error={ error }/>
       </FormControl>

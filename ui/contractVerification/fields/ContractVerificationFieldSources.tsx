@@ -55,7 +55,7 @@ const ContractVerificationFieldSources = ({ fileTypes, multiple, required, title
     return (
       <div>
         <Text fontWeight={ 500 } color="text_secondary" mb={ 3 }>{ title }</Text>
-        <Button size="sm" variant="outline">
+        <Button size="sm" variant="outline" borderColor="accent" color="accent" _hover={{ borderColor: 'accent' }}>
             Drop file{ multiple ? 's' : '' } or click here
         </Button>
       </div>

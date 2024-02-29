@@ -16,7 +16,6 @@ type BlankRasaBannerProps = {
 
 const BlankRasaBanner = ({ block }: BlankRasaBannerProps) => {
   const bgColor = useColorModeValue('light', '#171717');
-  const btnColor = useColorModeValue('white', '#171717');
   const bgBoxShadowDesktop = useColorModeValue(
     '0px 8px 16px -5px rgba(0, 0, 0, 0.10)',
     '0px 8px 16px -5px rgba(6, 252, 153, 0.10)',
@@ -65,7 +64,7 @@ const BlankRasaBanner = ({ block }: BlankRasaBannerProps) => {
             bg="transparent"
             _hover={{
               bg: 'accent',
-              color: btnColor,
+              color: 'text_on_accent',
             }}
             fontWeight="medium"
             colorScheme="accent"

@@ -8,6 +8,10 @@ const semanticTokens = {
       'default': '#171717',
       _dark: '#FAFAFA',
     },
+    text_on_accent: {
+      'default': '#FAFAFA',
+      _dark: '#171717',
+    },
     text_secondary: {
       'default': '#616B74',
       _dark: '#A8A8A8',
@@ -27,14 +31,13 @@ const semanticTokens = {
       _dark: '#2C2C2C',
     },
     accent: {
-      'default': '#3CAD71',
-      _dark: '#07FC99',
+      'default': 'mediumSeaGreen.base',
+      _dark: 'lightGreen.base',
     },
     bg_base: {
       'default': 'white',
       _dark: '#171717',
     },
-
   },
   shadows: {
     action_bar:

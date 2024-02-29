@@ -78,7 +78,7 @@ const ColorModeSwitch = () => {
         { activeTheme ? (
           <IconButton
             variant="simple"
-            colorScheme="blue"
+            colorScheme="white"
             aria-label="color mode switch"
             icon={ <IconSvg name={ activeTheme.icon } boxSize={ 5 }/> }
             boxSize={ 5 }

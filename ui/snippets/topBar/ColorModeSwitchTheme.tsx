@@ -18,8 +18,7 @@ interface Props extends ColorTheme {
 const ColorModeSwitchTheme = ({ icon, name, colors, onClick, activeHex }: Props) => {
   const isActive = colors.some((sample) => sample.hex === activeHex);
   const activeColor = useColorModeValue('blackAlpha.800', 'gray.50');
-  const activeBgColor = useColorModeValue('blue.50', 'blackAlpha.800');
-  const inactiveColor = useColorModeValue('blue.700', 'gray.400');
+  const activeBgColor = useColorModeValue('mediumSeaGreen.800', 'lightGreen.800');
   const hoverBorderColor = useToken('colors', 'link_hovered');
   const hasOneColor = colors.length === 1;
 
@@ -29,7 +28,7 @@ const ColorModeSwitchTheme = ({ icon, name, colors, onClick, activeHex }: Props)
       py="10px"
       px="6px"
       cursor="pointer"
-      color={ isActive ? activeColor : inactiveColor }
+      color={ isActive ? activeColor : 'text' }
       bgColor={ isActive ? activeBgColor : undefined }
       _hover={{
         color: isActive ? undefined : 'link_hovered',
