@@ -5,7 +5,7 @@ export function vercel(): CspDev.DirectiveDescriptor {
     'script-src': [ 'https://vercel.live', 'https://vercel.com' ],
     'font-src': [ 'https://assets.vercel.com' ],
     'img-src': [ 'https://*.vercel.com', 'https://vercel.com' ],
-    'connect-src': [ 'https://vitals.vercel-insights.com' ],
+    'connect-src': [ 'https://vitals.vercel-insights.com', 'https://vercel.live' ],
     'frame-src': [ 'https://vercel.live' ],
   };
 }
