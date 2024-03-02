@@ -4,5 +4,8 @@
   "prettier.trailingComma": "all",
   "reactSnippets.settings.importReactOnTop": true,
   "editor.formatOnPaste": false,
-  "cSpell.words": ["chakra"]
+  "cSpell.words": ["chakra"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  }
 }
