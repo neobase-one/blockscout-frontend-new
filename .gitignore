@@ -13,7 +13,8 @@
 /.next/
 /out/
 /public/assets/
-/public/envs.js
+# Temporarily disabled since it doesn't work on Vercel
+# /public/envs.js
 /public/icons/sprite.svg
 /public/icons/README.md
 /analyze
