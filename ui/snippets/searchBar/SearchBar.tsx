@@ -130,6 +130,8 @@ const SearchBar = ({ isHomepage }: Props) => {
         <PopoverContent
           w={ `${ menuWidth.current }px` }
           ref={ menuRef }
+          borderColor="divider"
+          bgColor="bg_base"
         >
           <PopoverBody
             p={ 0 }

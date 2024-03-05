@@ -138,6 +138,10 @@ const MarketplaceAppCard = ({
             padding={ 2 }
             openDelay={ 300 }
             maxW={ 400 }
+            bgColor="bg_base"
+            color="text"
+            borderWidth="1px"
+            borderColor="divider"
           >
             <IconSvg
               name={ integrationIcon }

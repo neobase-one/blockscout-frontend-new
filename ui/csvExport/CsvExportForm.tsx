@@ -94,6 +94,9 @@ const CsvExportForm = ({ hash, resource, filterType, filterValue, fileNameTempla
           isLoading={ formState.isSubmitting }
           loadingText="Download"
           isDisabled={ !formState.isValid }
+          bg="accent"
+          color="text_on_accent"
+          _hover={{ bg: 'accent', color: 'text_on_accent' }}
         >
           Download
         </Button>

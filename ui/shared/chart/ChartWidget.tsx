@@ -187,7 +187,7 @@ const ChartWidget = ({ items, title, description, isLoading, className, isError,
           </Flex>
 
           <Flex ml="auto" columnGap={ 2 }>
-            <Tooltip label="Reset zoom">
+            <Tooltip label="Reset zoom" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
               <IconButton
                 hidden={ isZoomResetInitial }
                 aria-label="Reset zoom"
@@ -217,11 +217,16 @@ const ChartWidget = ({ items, title, description, isLoading, className, isError,
                     </VisuallyHidden>
                   </MenuButton>
                 </Skeleton>
-                <MenuList>
+                <MenuList bgColor="bg_base" borderColor="divider">
                   <MenuItem
                     display="flex"
                     alignItems="center"
                     onClick={ showChartFullscreen }
+                    bgColor="bg_base"
+                    borderColor="divider"
+                    _hover={{
+                      bgColor: 'divider',
+                    }}
                   >
                     <IconSvg name="scope" boxSize={ 5 } mr={ 3 }/>
                   View fullscreen
@@ -231,6 +236,11 @@ const ChartWidget = ({ items, title, description, isLoading, className, isError,
                     display="flex"
                     alignItems="center"
                     onClick={ handleFileSaveClick }
+                    bgColor="bg_base"
+                    borderColor="divider"
+                    _hover={{
+                      bgColor: 'divider',
+                    }}
                   >
                     <IconSvg name="files/image" boxSize={ 5 } mr={ 3 }/>
                   Save as PNG
@@ -240,6 +250,11 @@ const ChartWidget = ({ items, title, description, isLoading, className, isError,
                     display="flex"
                     alignItems="center"
                     onClick={ handleSVGSavingClick }
+                    bgColor="bg_base"
+                    borderColor="divider"
+                    _hover={{
+                      bgColor: 'divider',
+                    }}
                   >
                     <IconSvg name="files/csv" boxSize={ 5 } mr={ 3 }/>
                   Save as CSV

@@ -1,3 +1,11 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "reactSnippets.settings.importReactOnTop": true,
+  "editor.formatOnPaste": false,
+  "cSpell.words": ["chakra"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  }
 }

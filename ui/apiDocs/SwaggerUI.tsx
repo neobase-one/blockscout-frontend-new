@@ -44,18 +44,20 @@ const SwaggerUI = () => {
       outline: 'none',
     },
     // eslint-disable-next-line max-len
-    '.swagger-ui .opblock .opblock-summary-path, .swagger-ui .opblock .opblock-summary-description, .swagger-ui div, .swagger-ui p, .swagger-ui h5, .swagger-ui .response-col_links, .swagger-ui h4, .swagger-ui table thead tr th, .swagger-ui table thead tr td, .swagger-ui .parameter__name, .swagger-ui .parameter__type, .swagger-ui .response-col_status, .swagger-ui .tab li, .swagger-ui .opblock .opblock-section-header h4': {
-      color: 'unset',
-    },
+    '.swagger-ui .opblock .opblock-summary-path, .swagger-ui .opblock .opblock-summary-description, .swagger-ui div, .swagger-ui p, .swagger-ui h5, .swagger-ui .response-col_links, .swagger-ui h4, .swagger-ui table thead tr th, .swagger-ui table thead tr td, .swagger-ui .parameter__name, .swagger-ui .parameter__type, .swagger-ui .response-col_status, .swagger-ui .tab li, .swagger-ui .opblock .opblock-section-header h4':
+      {
+        color: 'unset',
+      },
     '.swagger-ui input': {
       color: 'blackAlpha.800',
     },
     '.swagger-ui .opblock .opblock-section-header': {
       background: useColorModeValue('whiteAlpha.800', 'blackAlpha.800'),
     },
-    '.swagger-ui .response-col_description__inner p, .swagger-ui .parameters-col_description p': {
-      margin: 0,
-    },
+    '.swagger-ui .response-col_description__inner p, .swagger-ui .parameters-col_description p':
+      {
+        margin: 0,
+      },
     '.swagger-ui .wrapper': {
       padding: 0,
     },
@@ -108,6 +110,31 @@ const SwaggerUI = () => {
     '.swagger-ui .model .property.primitive': {
       color: useToken('colors', 'text_secondary'),
       wordBreak: 'break-all',
+    },
+    // Our custom styles
+    '.opblock-summary-control[aria-label~="get"] > .opblock-summary-method': {
+      backgroundColor: useToken('colors', 'accent'),
+    },
+
+    '.opblock-summary-control > .opblock-summary-method': {
+      color: useColorModeValue('text', '#171717'),
+    },
+
+    '.opblock': {
+      borderColor: useToken('colors', 'accent') + ' !important',
+      backgroundColor: 'unset !important',
+    },
+
+    '.tab-item.active h4 span::after': {
+      backgroundColor: useToken('colors', 'accent') + ' !important',
+    },
+
+    '.opblock .opblock-summary': {
+      borderColor: useToken('colors', 'accent') + ' !important',
+    },
+
+    '.opblock .try-out button': {
+      color: useToken('colors', 'text') + ' !important',
     },
   };
 

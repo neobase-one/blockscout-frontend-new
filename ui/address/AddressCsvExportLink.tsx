@@ -38,7 +38,7 @@ const AddressCsvExportLink = ({ className, address, params, isLoading }: Props) 
   }
 
   return (
-    <Tooltip isDisabled={ !isMobile } label="Download CSV">
+    <Tooltip isDisabled={ !isMobile } label="Download CSV" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <LinkInternal
         className={ className }
         display="inline-flex"

@@ -11,8 +11,11 @@ type Props = {
 };
 
 const WalletMenuContent = ({ address, disconnect }: Props) => {
+
   const onAddressClick = React.useCallback(() => {
-    mixpanel.logEvent(mixpanel.EventTypes.WALLET_ACTION, { Action: 'Address click' });
+    mixpanel.logEvent(mixpanel.EventTypes.WALLET_ACTION, {
+      Action: 'Address click',
+    });
   }, []);
 
   return (
@@ -44,7 +47,15 @@ const WalletMenuContent = ({ address, disconnect }: Props) => {
         mb={ 6 }
         onClick={ onAddressClick }
       />
-      <Button size="sm" width="full" variant="outline" onClick={ disconnect }>
+      <Button
+        size="sm"
+        width="full"
+        variant="outline"
+        color="accent"
+        borderColor="accent"
+        _hover={{ color: 'text_on_accent', bg: 'accent' }}
+        onClick={ disconnect }
+      >
         Disconnect
       </Button>
     </Box>

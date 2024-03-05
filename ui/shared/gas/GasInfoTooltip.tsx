@@ -1,4 +1,4 @@
-import { Box, DarkMode, Flex, Grid, Popover, PopoverBody, PopoverContent, PopoverTrigger, Portal, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Grid, Popover, PopoverBody, PopoverContent, PopoverTrigger, Portal } from '@chakra-ui/react';
 import React from 'react';
 
 import type { HomeStats } from 'types/api/stats';
@@ -23,8 +23,6 @@ const POPOVER_OFFSET: [ number, number ] = [ 0, 10 ];
 const feature = config.features.gasTracker;
 
 const GasInfoTooltip = ({ children, data, dataUpdatedAt, isOpen }: Props) => {
-  const tooltipBg = useColorModeValue('gray.700', 'gray.900');
-
   if (!data.gas_prices) {
     return null;
   }
@@ -41,30 +39,28 @@ const GasInfoTooltip = ({ children, data, dataUpdatedAt, isOpen }: Props) => {
         { children }
       </PopoverTrigger>
       <Portal>
-        <PopoverContent bgColor={ tooltipBg } w="auto">
+        <PopoverContent bgColor="bg_base" w="auto" borderColor="divider" >
           <PopoverBody color="white">
-            <DarkMode>
-              <Flex flexDir="column" fontSize="xs" lineHeight={ 4 } rowGap={ 3 }>
-                { data.gas_price_updated_at && (
-                  <Flex justifyContent="space-between">
-                    <Box color="text_secondary">Last update</Box>
-                    <Flex color="text_secondary" justifyContent="flex-end" columnGap={ 2 } ml={ 3 }>
-                      { dayjs(data.gas_price_updated_at).format('MMM DD, HH:mm:ss') }
-                      { data.gas_prices_update_in !== 0 &&
+            <Flex flexDir="column" fontSize="xs" lineHeight={ 4 } rowGap={ 3 }>
+              { data.gas_price_updated_at && (
+                <Flex justifyContent="space-between">
+                  <Box color="text_secondary">Last update</Box>
+                  <Flex color="text_secondary" justifyContent="flex-end" columnGap={ 2 } ml={ 3 }>
+                    { dayjs(data.gas_price_updated_at).format('MMM DD, HH:mm:ss') }
+                    { data.gas_prices_update_in !== 0 &&
                             <GasInfoUpdateTimer key={ dataUpdatedAt } startTime={ dataUpdatedAt } duration={ data.gas_prices_update_in }/> }
-                    </Flex>
                   </Flex>
-                ) }
-                <Grid rowGap={ 2 } columnGap="10px" gridTemplateColumns={ `repeat(${ columnNum }, minmax(min-content, auto))` }>
-                  <GasInfoTooltipRow name="Fast" info={ data.gas_prices.fast }/>
-                  <GasInfoTooltipRow name="Normal" info={ data.gas_prices.average }/>
-                  <GasInfoTooltipRow name="Slow" info={ data.gas_prices.slow }/>
-                </Grid>
-                <LinkInternal href={ route({ pathname: '/gas-tracker' }) }>
+                </Flex>
+              ) }
+              <Grid rowGap={ 2 } columnGap="10px" gridTemplateColumns={ `repeat(${ columnNum }, minmax(min-content, auto))` }>
+                <GasInfoTooltipRow name="Fast" info={ data.gas_prices.fast }/>
+                <GasInfoTooltipRow name="Normal" info={ data.gas_prices.average }/>
+                <GasInfoTooltipRow name="Slow" info={ data.gas_prices.slow }/>
+              </Grid>
+              <LinkInternal href={ route({ pathname: '/gas-tracker' }) }>
                     Gas tracker overview
-                </LinkInternal>
-              </Flex>
-            </DarkMode>
+              </LinkInternal>
+            </Flex>
           </PopoverBody>
         </PopoverContent>
       </Portal>

@@ -33,7 +33,10 @@ const PublicTagMenuItem = ({ className, hash, onBeforeClick, type }: Props) => {
       }
       case 'menu_item': {
         return (
-          <MenuItem className={ className } onClick={ handleClick }>
+          <MenuItem className={ className } onClick={ handleClick } bgColor="bg_base" borderColor="divider"
+            _hover={{
+              bgColor: 'divider',
+            }}>
             <IconSvg name="publictags" boxSize={ 6 } mr={ 2 }/>
             <span>Add public tag</span>
           </MenuItem>

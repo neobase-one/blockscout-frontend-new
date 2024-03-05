@@ -1,31 +1,47 @@
 const semanticTokens = {
   colors: {
     divider: {
-      'default': 'blackAlpha.200',
-      _dark: 'whiteAlpha.200',
+      'default': '#F0F1F2',
+      _dark: '#2C2C2C',
     },
     text: {
-      'default': 'blackAlpha.800',
-      _dark: 'whiteAlpha.800',
+      'default': '#171717',
+      _dark: '#FAFAFA',
+    },
+    text_on_accent: {
+      'default': '#FAFAFA',
+      _dark: '#171717',
     },
     text_secondary: {
-      'default': 'gray.500',
-      _dark: 'gray.400',
+      'default': '#616B74',
+      _dark: '#A8A8A8',
     },
     link: {
-      'default': 'blue.600',
-      _dark: 'blue.300',
+      'default': 'accent',
     },
     link_hovered: {
-      'default': 'blue.400',
+      'default': 'accent',
     },
     error: {
       'default': 'red.400',
       _dark: 'red.300',
     },
+    secondary_base: {
+      'default': '#E2E8F0',
+      _dark: '#2C2C2C',
+    },
+    accent: {
+      'default': 'mediumSeaGreen.base',
+      _dark: 'lightGreen.base',
+    },
+    bg_base: {
+      'default': 'white',
+      _dark: '#171717',
+    },
   },
   shadows: {
-    action_bar: '0 4px 4px -4px rgb(0 0 0 / 10%), 0 2px 4px -4px rgb(0 0 0 / 6%)',
+    action_bar:
+      '0 4px 4px -4px rgb(0 0 0 / 10%), 0 2px 4px -4px rgb(0 0 0 / 6%)',
   },
 };
 

@@ -37,6 +37,7 @@ const TokensActionBar = ({
       onChange={ onSearchChange }
       placeholder="Token name or symbol"
       initialValue={ searchTerm }
+      inputProps={{ borderColor: 'secondary_base' }}
     />
   );
 

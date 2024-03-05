@@ -11,7 +11,6 @@ import { isInternalItem } from 'lib/hooks/useNavItems';
 import IconSvg from 'ui/shared/IconSvg';
 
 import NavLinkIcon from './NavLinkIcon';
-import useColors from './useColors';
 import useNavLinkStyleProps from './useNavLinkStyleProps';
 
 type Props = {
@@ -24,7 +23,6 @@ type Props = {
 
 const NavLink = ({ item, isCollapsed, px, className, onClick }: Props) => {
   const isMobile = useIsMobile();
-  const colors = useColors();
 
   const isExpanded = isCollapsed === false;
   const isInternalLink = isInternalItem(item);
@@ -57,7 +55,10 @@ const NavLink = ({ item, isCollapsed, px, className, onClick }: Props) => {
         placement="right"
         variant="nav"
         gutter={ 20 }
-        color={ isInternalLink && item.isActive ? colors.text.active : colors.text.hover }
+        color={ isInternalLink && item.isActive ? 'accent' : 'text' }
+        bgColor="bg_base"
+        borderWidth="1px"
+        borderColor="divider"
       >
         <HStack spacing={ 3 } overflow="hidden">
           <NavLinkIcon item={ item }/>

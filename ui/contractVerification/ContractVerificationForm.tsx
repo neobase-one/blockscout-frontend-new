@@ -198,6 +198,9 @@ const ContractVerificationForm = ({ method: methodFromQuery, config, hash }: Pro
             mt={ 12 }
             isLoading={ formState.isSubmitting }
             loadingText="Verify & publish"
+            bgColor="accent"
+            color="text_on_accent"
+            _hover={{ bgColor: 'accent', color: 'text_on_accent' }}
           >
             Verify & publish
           </Button>

@@ -1,4 +1,4 @@
-import { chakra, Checkbox, Code } from '@chakra-ui/react';
+import { chakra, Checkbox, Code, useColorModeValue } from '@chakra-ui/react';
 import { useQueryClient } from '@tanstack/react-query';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
@@ -26,6 +26,7 @@ const ContractVerificationFieldCompiler = ({ isVyper }: Props) => {
   const isMobile = useIsMobile();
   const queryClient = useQueryClient();
   const config = queryClient.getQueryData<SmartContractVerificationConfig>(getResourceKey('contract_verification_config'));
+  const fancySelectFocusBorderColor = useColorModeValue('mediumSeaGreen.base', 'lightGreen.base');
 
   const handleCheckboxChange = React.useCallback(() => {
     if (isNightly) {
@@ -61,9 +62,10 @@ const ContractVerificationFieldCompiler = ({ isVyper }: Props) => {
         error={ error }
         isRequired
         isAsync
+        focusBorderColor={ fancySelectFocusBorderColor }
       />
     );
-  }, [ formState.errors, formState.isSubmitting, isMobile, loadOptions ]);
+  }, [ formState.errors, formState.isSubmitting, isMobile, loadOptions, fancySelectFocusBorderColor ]);
 
   return (
     <ContractVerificationFormRow>

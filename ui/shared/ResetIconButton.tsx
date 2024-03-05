@@ -12,7 +12,7 @@ const ResetIconButton = ({ onClick }: Props) => {
   const resetTokenIconHoverColor = useColorModeValue('blue.400', 'blue.200');
 
   return (
-    <Tooltip label="Reset filter">
+    <Tooltip label="Reset filter" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <Flex>
         <IconSvg
           name="cross"

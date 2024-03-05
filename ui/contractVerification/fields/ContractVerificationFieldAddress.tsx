@@ -29,6 +29,7 @@ const ContractVerificationFieldAddress = ({ isReadOnly }: Props) => {
           maxLength={ ADDRESS_LENGTH }
           isDisabled={ formState.isSubmitting || isReadOnly }
           autoComplete="off"
+          _focus={{ borderColor: 'accent' }}
         />
         <InputPlaceholder text="Smart contract / Address (0x...)" error={ error }/>
       </FormControl>

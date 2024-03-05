@@ -39,6 +39,7 @@ const ContractVerificationFieldLibraryItem = ({ control, index, fieldsLength, on
           isDisabled={ isDisabled }
           maxLength={ 255 }
           autoComplete="off"
+          _focus={{ borderColor: 'accent' }}
         />
         <InputPlaceholder text="Library name (.sol file)" error={ error?.name }/>
       </FormControl>
@@ -54,6 +55,7 @@ const ContractVerificationFieldLibraryItem = ({ control, index, fieldsLength, on
           isDisabled={ isDisabled }
           required
           autoComplete="off"
+          _focus={{ borderColor: 'accent' }}
         />
         <InputPlaceholder text="Library address (0x...)" error={ error?.address }/>
       </FormControl>
@@ -87,6 +89,9 @@ const ContractVerificationFieldLibraryItem = ({ control, index, fieldsLength, on
                 onClick={ handleRemoveButtonClick }
                 icon={ <IconSvg name="minus" w="20px" h="20px"/> }
                 isDisabled={ isDisabled }
+                color="accent"
+                borderColor="accent"
+                _hover={{ bgColor: 'accent', color: 'text_on_accent' }}
               />
             ) }
             { fieldsLength < LIMIT && (
@@ -98,6 +103,9 @@ const ContractVerificationFieldLibraryItem = ({ control, index, fieldsLength, on
                 onClick={ handleAddButtonClick }
                 icon={ <IconSvg name="plus" w="20px" h="20px"/> }
                 isDisabled={ isDisabled }
+                color="accent"
+                borderColor="accent"
+                _hover={{ bgColor: 'accent', color: 'text_on_accent' }}
               />
             ) }
           </Flex>

@@ -1,8 +1,9 @@
-import { Heading, Flex, Tooltip, Link, chakra, Skeleton, useDisclosure } from '@chakra-ui/react';
+import { chakra, Flex, Heading, Link, Skeleton, Tooltip, useDisclosure } from '@chakra-ui/react';
 import _debounce from 'lodash/debounce';
 import React from 'react';
 
 import useIsMobile from 'lib/hooks/useIsMobile';
+import BlankRasaBanner from 'ui/banner/BlankRasaBanner';
 import TextAd from 'ui/shared/ad/TextAd';
 import IconSvg from 'ui/shared/IconSvg';
 import LinkInternal from 'ui/shared/LinkInternal';
@@ -36,7 +37,7 @@ const BackLink = (props: BackLinkProp & { isLoading?: boolean }) => {
 
   if ('url' in props) {
     return (
-      <Tooltip label={ props.label }>
+      <Tooltip label={ props.label } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <LinkInternal display="inline-flex" href={ props.url } h="40px" mr={ 3 }>
           { icon }
         </LinkInternal>
@@ -45,7 +46,7 @@ const BackLink = (props: BackLinkProp & { isLoading?: boolean }) => {
   }
 
   return (
-    <Tooltip label={ props.label }>
+    <Tooltip label={ props.label } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <Link display="inline-flex" onClick={ props.onClick } h="40px" mr={ 3 }>
         { icon }
       </Link>
@@ -91,63 +92,70 @@ const PageTitle = ({ title, contentAfter, withTextAd, backLink, className, isLoa
   }, [ updatedTruncateState ]);
 
   return (
-    <Flex className={ className } flexDir="column" rowGap={ 3 } mb={ 6 }>
-      <Flex
-        flexDir="row"
-        flexWrap="wrap"
-        rowGap={ 3 }
-        columnGap={ 3 }
-        alignItems="center"
-      >
-        <Flex h={{ base: 'auto', lg: isLoading ? 10 : 'auto' }} maxW="100%" alignItems="center">
-          { backLink && <BackLink { ...backLink } isLoading={ isLoading }/> }
-          { beforeTitle }
-          <Skeleton
-            isLoaded={ !isLoading }
-            overflow="hidden"
-          >
-            <Tooltip
-              label={ title }
-              isOpen={ tooltip.isOpen }
-              onClose={ tooltip.onClose }
-              maxW={{ base: 'calc(100vw - 32px)', lg: '500px' }}
-              closeOnScroll={ isMobile ? true : false }
-              isDisabled={ !isTextTruncated }
+    <>
+      <BlankRasaBanner block/>
+      <Flex className={ className } flexDir="column" rowGap={ 3 } mb={ 6 } mt={ 8 }>
+        <Flex
+          flexDir="row"
+          flexWrap="wrap"
+          rowGap={ 3 }
+          columnGap={ 3 }
+          alignItems="center"
+        >
+          <Flex h={{ base: 'auto', lg: isLoading ? 10 : 'auto' }} maxW="100%" alignItems="center">
+            { backLink && <BackLink { ...backLink } isLoading={ isLoading }/> }
+            { beforeTitle }
+            <Skeleton
+              isLoaded={ !isLoading }
+              overflow="hidden"
             >
-              <Heading
-                ref={ headingRef }
-                as="h1"
-                size="lg"
-                whiteSpace="normal"
-                wordBreak="break-all"
-                style={{
-                  WebkitLineClamp: TEXT_MAX_LINES,
-                  WebkitBoxOrient: 'vertical',
-                  display: '-webkit-box',
-                }}
-                overflow="hidden"
-                textOverflow="ellipsis"
-                onMouseEnter={ tooltip.onOpen }
-                onMouseLeave={ tooltip.onClose }
-                onClick={ isMobile ? tooltip.onToggle : undefined }
+              <Tooltip
+                label={ title }
+                isOpen={ tooltip.isOpen }
+                onClose={ tooltip.onClose }
+                maxW={{ base: 'calc(100vw - 32px)', lg: '500px' }}
+                closeOnScroll={ isMobile ? true : false }
+                isDisabled={ !isTextTruncated }
+                bgColor="bg_base"
+                color="text"
+                borderWidth="1px"
+                borderColor="divider"
               >
-                <span ref={ textRef }>
-                  { title }
-                </span>
-              </Heading>
-            </Tooltip>
-          </Skeleton>
-          { afterTitle }
+                <Heading
+                  ref={ headingRef }
+                  as="h1"
+                  size="lg"
+                  whiteSpace="normal"
+                  wordBreak="break-all"
+                  style={{
+                    WebkitLineClamp: TEXT_MAX_LINES,
+                    WebkitBoxOrient: 'vertical',
+                    display: '-webkit-box',
+                  }}
+                  overflow="hidden"
+                  textOverflow="ellipsis"
+                  onMouseEnter={ tooltip.onOpen }
+                  onMouseLeave={ tooltip.onClose }
+                  onClick={ isMobile ? tooltip.onToggle : undefined }
+                >
+                  <span ref={ textRef }>
+                    { title }
+                  </span>
+                </Heading>
+              </Tooltip>
+            </Skeleton>
+            { afterTitle }
+          </Flex>
+          { contentAfter }
+          { withTextAd && <TextAd order={{ base: -1, lg: 100 }} mb={{ base: 6, lg: 0 }} ml="auto" w={{ base: '100%', lg: 'auto' }}/> }
         </Flex>
-        { contentAfter }
-        { withTextAd && <TextAd order={{ base: -1, lg: 100 }} mb={{ base: 6, lg: 0 }} ml="auto" w={{ base: '100%', lg: 'auto' }}/> }
+        { secondRow && (
+          <Flex alignItems="center" minH={ 10 } overflow="hidden" _empty={{ display: 'none' }}>
+            { secondRow }
+          </Flex>
+        ) }
       </Flex>
-      { secondRow && (
-        <Flex alignItems="center" minH={ 10 } overflow="hidden" _empty={{ display: 'none' }}>
-          { secondRow }
-        </Flex>
-      ) }
-    </Flex>
+    </>
   );
 };
 

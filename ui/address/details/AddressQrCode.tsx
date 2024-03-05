@@ -7,7 +7,6 @@ import {
   ModalCloseButton,
   ModalHeader,
   ModalOverlay,
-  LightMode,
   Box,
   useDisclosure,
   Tooltip,
@@ -68,7 +67,7 @@ const AddressQrCode = ({ address, className, isLoading }: Props) => {
 
   return (
     <>
-      <Tooltip label="Click to view QR code">
+      <Tooltip label="Click to view QR code" bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
         <IconButton
           className={ className }
           aria-label="Show QR code"
@@ -79,6 +78,9 @@ const AddressQrCode = ({ address, className, isLoading }: Props) => {
           onClick={ onOpen }
           icon={ <IconSvg name="qr_code" boxSize={ 5 }/> }
           flexShrink={ 0 }
+          color="accent"
+          _hover={{ color: 'text_on_accent', bg: 'accent' }}
+          borderColor="accent"
         />
       </Tooltip>
 
@@ -93,25 +95,23 @@ const AddressQrCode = ({ address, className, isLoading }: Props) => {
         </Modal>
       ) }
       { !error && (
-        <LightMode>
-          <Modal isOpen={ isOpen } onClose={ onClose } size={{ base: 'full', lg: 'sm' }}>
-            <ModalOverlay/>
-            <ModalContent>
-              <ModalHeader fontWeight="500" textStyle="h3" mb={ 4 }>Address QR code</ModalHeader>
-              <ModalCloseButton/>
-              <ModalBody mb={ 0 }>
-                <AddressEntity
-                  mb={ 3 }
-                  fontWeight={ 500 }
-                  color="text"
-                  address={ address }
-                  noLink
-                />
-                <Box p={ 4 } dangerouslySetInnerHTML={{ __html: qr }}/>
-              </ModalBody>
-            </ModalContent>
-          </Modal>
-        </LightMode>
+        <Modal isOpen={ isOpen } onClose={ onClose } size={{ base: 'full', lg: 'sm' }}>
+          <ModalOverlay/>
+          <ModalContent bgColor="bg_base">
+            <ModalHeader fontWeight="500" textStyle="h3" mb={ 4 }>Address QR code</ModalHeader>
+            <ModalCloseButton/>
+            <ModalBody mb={ 0 }>
+              <AddressEntity
+                mb={ 3 }
+                fontWeight={ 500 }
+                color="text"
+                address={ address }
+                noLink
+              />
+              <Box p={ 4 } dangerouslySetInnerHTML={{ __html: qr }}/>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       ) }
     </>
   );

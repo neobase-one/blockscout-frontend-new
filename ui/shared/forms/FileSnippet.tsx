@@ -77,6 +77,10 @@ const FileSnippet = ({ file, className, index, onRemove, isDisabled, error }: Pr
               label={ error }
               placement="top"
               maxW="320px"
+              bgColor="bg_base"
+              color="text"
+              borderWidth="1px"
+              borderColor="divider"
             >
               <Box cursor="pointer" display="inherit" onClick={ handleErrorHintIconClick } ml={ 1 }>
                 <IconSvg name="info" boxSize={ 5 } color="error"/>

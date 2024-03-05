@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react';
+import { Link, useColorModeValue } from '@chakra-ui/react';
 import { useQueryClient } from '@tanstack/react-query';
 import React from 'react';
 import type { ControllerRenderProps } from 'react-hook-form';
@@ -18,6 +18,8 @@ interface Props {
 }
 
 const ContractVerificationFieldEvmVersion = ({ isVyper }: Props) => {
+  const fancySelectFocusBorderColor = useColorModeValue('mediumSeaGreen.base', 'lightGreen.base');
+  const fancySelectSelectedOptionColor = useColorModeValue('mediumSeaGreen', 'lightGreen');
   const { formState, control } = useFormContext<FormFields>();
   const isMobile = useIsMobile();
   const queryClient = useQueryClient();
@@ -39,9 +41,11 @@ const ContractVerificationFieldEvmVersion = ({ isVyper }: Props) => {
         isDisabled={ formState.isSubmitting }
         error={ error }
         isRequired
+        focusBorderColor={ fancySelectFocusBorderColor }
+        selectedOptionColor={ fancySelectSelectedOptionColor }
       />
     );
-  }, [ formState.errors, formState.isSubmitting, isMobile, options ]);
+  }, [ formState.errors, formState.isSubmitting, isMobile, options, fancySelectFocusBorderColor, fancySelectSelectedOptionColor ]);
 
   return (
     <ContractVerificationFormRow>

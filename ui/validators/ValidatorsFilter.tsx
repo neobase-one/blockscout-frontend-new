@@ -31,12 +31,20 @@ const ValidatorsFilter = ({ onChange, defaultValue, isActive }: Props) => {
           as="div"
         />
       </MenuButton>
-      <MenuList zIndex="popover">
+      <MenuList zIndex="popover" bgColor="bg_base" borderColor="divider">
         <MenuOptionGroup defaultValue={ defaultValue || 'all' } title="Status" type="radio" onChange={ onChange }>
-          <MenuItemOption value="all">All</MenuItemOption>
-          <MenuItemOption value="active">Active</MenuItemOption>
-          <MenuItemOption value="probation">Probation</MenuItemOption>
-          <MenuItemOption value="inactive">Failed</MenuItemOption>
+          <MenuItemOption value="all" bgColor="bg_base" borderColor="divider" _hover={{
+            bgColor: 'divider',
+          }}>All</MenuItemOption>
+          <MenuItemOption value="active" bgColor="bg_base" borderColor="divider" _hover={{
+            bgColor: 'divider',
+          }}>Active</MenuItemOption>
+          <MenuItemOption value="probation" bgColor="bg_base" borderColor="divider" _hover={{
+            bgColor: 'divider',
+          }}>Probation</MenuItemOption>
+          <MenuItemOption value="inactive" bgColor="bg_base" borderColor="divider" _hover={{
+            bgColor: 'divider',
+          }}>Failed</MenuItemOption>
         </MenuOptionGroup>
       </MenuList>
     </Menu>

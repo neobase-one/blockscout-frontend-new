@@ -54,7 +54,7 @@ const ContractCodeIde = ({ className, hash }: Props) => {
           <IconSvg name="arrows/east-mini" transform={ isOpen ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 }/>
         </Button>
       </PopoverTrigger>
-      <PopoverContent w="240px">
+      <PopoverContent w="240px" borderColor="divider" bgColor="bg_base">
         <PopoverBody >
           <chakra.span color="text_secondary" fontSize="xs">Redactors</chakra.span>
           <Flex

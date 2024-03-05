@@ -89,17 +89,17 @@ const LatestTxsItem = ({ tx, isLoading }: Props) => {
       <Flex flexDir="column">
         { !config.UI.views.tx.hiddenFields?.value && (
           <Skeleton isLoaded={ !isLoading } my="3px">
-            <Text as="span" whiteSpace="pre">{ currencyUnits.ether } </Text>
-            <Text as="span" variant="secondary">{ getValueWithUnit(tx.value).dp(5).toFormat() }</Text>
+            <Text as="span" whiteSpace="pre" color="text">{ currencyUnits.ether } </Text>
+            <Text as="span" variant="secondary" color="text_secondary">{ getValueWithUnit(tx.value).dp(5).toFormat() }</Text>
           </Skeleton>
         ) }
         { !config.UI.views.tx.hiddenFields?.tx_fee && (
           <Skeleton isLoaded={ !isLoading } display="flex" whiteSpace="pre" my="3px">
-            <Text as="span">Fee </Text>
+            <Text as="span" color="text">Fee </Text>
             { tx.stability_fee ? (
               <TxFeeStability data={ tx.stability_fee } accuracy={ 5 } color="text_secondary" hideUsd/>
             ) : (
-              <Text as="span" variant="secondary">{ tx.fee.value ? getValueWithUnit(tx.fee.value).dp(5).toFormat() : '-' }</Text>
+              <Text as="span" variant="secondary" color="text_secondary">{ tx.fee.value ? getValueWithUnit(tx.fee.value).dp(5).toFormat() : '-' }</Text>
             ) }
           </Skeleton>
         ) }

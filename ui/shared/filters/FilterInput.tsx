@@ -1,4 +1,5 @@
-import { chakra, Input, InputGroup, InputLeftElement, InputRightElement, Skeleton, useColorModeValue } from '@chakra-ui/react';
+import type { InputProps } from '@chakra-ui/react';
+import { chakra, Input, InputGroup, InputLeftElement, InputRightElement, Skeleton } from '@chakra-ui/react';
 import type { ChangeEvent } from 'react';
 import React, { useCallback, useState } from 'react';
 
@@ -12,12 +13,12 @@ type Props = {
   placeholder: string;
   initialValue?: string;
   isLoading?: boolean;
+  inputProps?: InputProps;
 }
 
-const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialValue, isLoading }: Props) => {
+const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialValue, isLoading, inputProps }: Props) => {
   const [ filterQuery, setFilterQuery ] = useState(initialValue || '');
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const iconColor = useColorModeValue('blackAlpha.600', 'whiteAlpha.600');
 
   const handleFilterQueryChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -45,7 +46,7 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
         <InputLeftElement
           pointerEvents="none"
         >
-          <IconSvg name="search" color={ iconColor } boxSize={ 4 }/>
+          <IconSvg name="search" color="text_secondary" boxSize={ 4 }/>
         </InputLeftElement>
 
         <Input
@@ -57,6 +58,9 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
           borderWidth="2px"
           textOverflow="ellipsis"
           whiteSpace="nowrap"
+          _placeholder={{ color: 'text_secondary' }}
+          { ...inputProps }
+          _focus={{ borderColor: 'accent' }}
         />
 
         { filterQuery ? (

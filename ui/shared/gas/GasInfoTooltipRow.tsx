@@ -15,15 +15,15 @@ const GasInfoTooltipRow = ({ name, info }: Props) => {
   return (
     <>
       <Box>
-        <chakra.span>{ name }</chakra.span>
+        <chakra.span color="accent">{ name }</chakra.span>
         { info && info.time && (
-          <chakra.span color="text_secondary">
+          <chakra.span color="text">
             { space }{ (info.time / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 }) }s
           </chakra.span>
         ) }
       </Box>
-      <GasPrice data={ info } textAlign="right"/>
-      <GasPrice data={ info } unitMode="secondary" color="text_secondary" textAlign="right"/>
+      <GasPrice data={ info } textAlign="right" color="text"/>
+      <GasPrice data={ info } unitMode="secondary" color="red" textAlign="right"/>
     </>
   );
 };

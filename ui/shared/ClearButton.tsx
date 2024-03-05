@@ -10,7 +10,6 @@ interface Props {
 }
 
 const ClearButton = ({ onClick, isDisabled, className }: Props) => {
-  const iconColor = useColorModeValue('gray.300', 'gray.600');
   const iconColorHover = useColorModeValue('gray.200', 'gray.500');
 
   return (
@@ -21,7 +20,7 @@ const ClearButton = ({ onClick, isDisabled, className }: Props) => {
       aria-label="Clear input"
       title="Clear input"
       boxSize={ 6 }
-      icon={ <IconSvg name="status/error" boxSize={ 3 } color={ iconColor } _hover={{ color: iconColorHover }}/> }
+      icon={ <IconSvg name="status/error" boxSize={ 3 } color="text_secondary" _hover={{ color: iconColorHover }}/> }
       size="sm"
       onClick={ onClick }
     />

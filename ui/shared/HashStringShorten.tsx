@@ -18,7 +18,7 @@ const HashStringShorten = ({ hash, isTooltipDisabled, as = 'span', type }: Props
   }
 
   return (
-    <Tooltip label={ hash } isDisabled={ isTooltipDisabled }>
+    <Tooltip label={ hash } isDisabled={ isTooltipDisabled } bgColor="bg_base" color="text" borderWidth="1px" borderColor="divider">
       <chakra.span as={ as }>{ shortenString(hash, charNumber) }</chakra.span>
     </Tooltip>
   );

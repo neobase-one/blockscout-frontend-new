@@ -101,6 +101,10 @@ const ContractCode = ({ addressHash, noSocket }: Props) => {
       w="130px"
       h={ 8 }
       mr={ data?.is_partially_verified ? 0 : 3 }
+      bgColor="accent"
+      _hover={{
+        bgColor: 'accent',
+      }}
       ml={ data?.is_partially_verified ? 0 : 'auto' }
       borderRadius="base"
       flexShrink={ 0 }

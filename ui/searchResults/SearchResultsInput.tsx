@@ -87,7 +87,8 @@ const SearchResultsInput = ({ searchTerm, handleSubmit, handleSearchTermChange }
           value={ searchTerm }
         />
       </PopoverTrigger>
-      <PopoverContent w={ `${ menuWidth.current }px` } maxH={{ base: '300px', lg: '500px' }} overflowY="scroll" ref={ menuRef }>
+      <PopoverContent w={ `${ menuWidth.current }px` } maxH={{ base: '300px', lg: '500px' }} overflowY="scroll" ref={ menuRef }
+        borderColor="divider" bgColor="bg_base">
         <PopoverBody py={ 6 }>
           <SearchBarRecentKeywords onClick={ handleSearchTermChange } onClear={ onClose }/>
         </PopoverBody>
