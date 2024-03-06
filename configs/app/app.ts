@@ -1,8 +1,23 @@
 import { getEnvValue } from './utils';
 
+const calculateAppHost = () => {
+  if (getEnvValue('NEXT_PUBLIC_VERCEL_ENV')) {
+    switch (getEnvValue('NEXT_PUBLIC_VERCEL_ENV')) {
+      case 'preview':
+        return getEnvValue('NEXT_PUBLIC_VERCEL_BRANCH_URL');
+      case 'production':
+        return 'blockscout-website.vercel.app';
+      default:
+        return getEnvValue('NEXT_PUBLIC_VERCEL_URL');
+    }
+  } else {
+    return getEnvValue('NEXT_PUBLIC_APP_HOST');
+  }
+};
+
 const appPort = getEnvValue('NEXT_PUBLIC_APP_PORT');
 const appSchema = getEnvValue('NEXT_PUBLIC_APP_PROTOCOL');
-const appHost = getEnvValue('NEXT_PUBLIC_VERCEL_BRANCH_URL') || getEnvValue('NEXT_PUBLIC_APP_HOST');
+const appHost = calculateAppHost();
 const baseUrl = [ appSchema || 'https', '://', appHost, appPort && ':' + appPort ]
   .filter(Boolean)
   .join('');
