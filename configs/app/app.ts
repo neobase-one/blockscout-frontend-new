@@ -6,7 +6,7 @@ const calculateAppHost = () => {
       case 'preview':
         return getEnvValue('NEXT_PUBLIC_VERCEL_BRANCH_URL');
       case 'production':
-        return 'blockscout-website.vercel.app';
+        return getEnvValue('NEXT_PUBLIC_VERCEL_PRODUCTION_URL');
       default:
         return getEnvValue('NEXT_PUBLIC_VERCEL_URL');
     }
