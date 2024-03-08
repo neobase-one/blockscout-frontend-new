@@ -10,6 +10,8 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
+import config from 'configs/app';
+
 type BlankRasaBannerProps = {
   block?: boolean;
 };
@@ -21,7 +23,7 @@ const BlankRasaBanner = ({ block }: BlankRasaBannerProps) => {
     '0px 8px 16px -5px rgba(6, 252, 153, 0.10)',
   );
   const imgInvertFilter = useColorModeValue('invert(0)', 'invert(1)');
-
+  const blankRasaLink = `https://www.blankrasa.com?rfc=${ config.app.blankRasaRFC }`;
   return (
     <Box
       p={ 5 }
@@ -59,7 +61,7 @@ const BlankRasaBanner = ({ block }: BlankRasaBannerProps) => {
             Features collections such as Canto Longnecks, Shnoises, and more.
           </Text>
         </Box>
-        <Link href="https://www.blankrasa.com" isExternal>
+        <Link href={ blankRasaLink } isExternal>
           <Button
             bg="transparent"
             _hover={{
