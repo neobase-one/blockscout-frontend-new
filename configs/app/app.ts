@@ -30,6 +30,7 @@ const app = Object.freeze({
   port: appPort,
   baseUrl,
   useProxy: getEnvValue('NEXT_PUBLIC_USE_NEXT_JS_PROXY') === 'true',
+  blankRasaRFC: getEnvValue('NEXT_PUBLIC_BLANK_RASA_RFC'),
 });
 
 export default app;
